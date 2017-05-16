@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block content %}
+
+<center>
+    <form method="POST" action="/auth/login" class="form-inline">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+        <div class="form-inline">
+        {{ form.username.label }} {{ form.username(size=30, class="form-control input-sm") }}
+        {{ form.password.label }} {{ form.password(size=30, class="form-control input-sm") }}
+
+    <input type="submit" class="btn btn-success btn-sm" value="Success">
+    </div>
+    </form>
+</center>
+
+{% endblock %}

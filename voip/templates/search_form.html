@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+{% block content %}
+
+<center>
+    <form action="", method = "POST", name = "numbers">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <div class="form-inline">
+
+                <div class="container">
+                        <div class="form-group">
+                            <div class='input-group date' data-provide='datepicker' id='datepicker1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar">
+                                        {{ form.data_from(size=30, placeholder="Введите дату \"С:\"", class="span4")}}
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class='input-group date' data-provide='datepicker' id='datepicker2'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar">
+                                        {{ form.data_to(size=30, placeholder="Введите дату \"По:\"", class="form-control input-sm")}}
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                </div>
+                <br>
+                    <br>
+
+                    {{ form.numb(size=30, placeholder="Введите телефонный номер", class="form-control input-sm")}}
+                <input class="btn btn-lg btn-primary" type="submit" value="Success">
+                </div>
+
+            <!-- jQuery Version 1.11.1 -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap-datepicker.js"></script>
+
+    </form>
+</center>
+
+{% endblock %}

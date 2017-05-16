@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>roles</th>
+        <th>action</th>
+      </tr>
+    </thead>
+
+     {% for u in users %}
+
+    <tbody>
+      <tr>
+        <td>{{ u.id }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.roles }} </td>
+        <td>
+        <a href="/users/remove/{{ u.id }}"><button type="button" class="btn btn-danger btn-xs">Delete</button></a>
+        <a href="/users/makeadmin/{{ u.id }}"><button type="button" class="btn btn-success btn-xs">Make Admin</button></a>
+         </td>
+      </tr>
+    </tbody>
+
+ {% endfor %}
+  </table>
+{% endblock %}

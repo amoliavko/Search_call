@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block content %}
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Время звонка</th>
+        <th>Исходящий</th>
+        <th>Входящий</th>
+        <th>Прослушать</th>
+        <th> </th>
+      </tr>
+    </thead>
+     {% for t in table %}
+      <tr>
+        <td>{{ t.acctid }}</td>
+        <td>{{ t.calldate }}</td>
+        <td>{{ t.src }} </td>
+        <td>{{ t.dst }} </td>
+        <td><audio src ={{ urlList[t.uniqueid] }} controls></audio></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+{% endblock %}
